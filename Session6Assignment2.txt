@@ -1,0 +1,23 @@
+CREATE TABLE custom(
+	date STRING,
+	zip code INT,
+	temperature INT
+)
+ROWS FORMAT DELIMITED
+FIELDS TERMINATED BY ',';
+
+LOCAL DATA LOCAL INPATH 'https://drive.google.com/file/d/0Bxr27gVaXO5sa0JBamZXdkpYUFk/view' OVERWRITE INTO TABLE custom;
+
+SHOW TABLES;
+SELECT
+     *
+FROM
+     custom;
+
+SELECT 
+     date
+FROM
+     custom
+WHERE 
+     zip code > 300000 
+     AND zip code < 399999;
